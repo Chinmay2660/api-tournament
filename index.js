@@ -6,7 +6,7 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/scores", {
+mongoose.connect("mongodb://0.0.0.0:27017/scores", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -21,6 +21,7 @@ mongoose.connection.on("error", (err) => {
 
 const scoresRouter = require("./api/routes/scoreRoutes");
 app.use("/api/scores", scoresRouter);
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
