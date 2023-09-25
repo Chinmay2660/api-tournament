@@ -9,11 +9,11 @@ const scoreSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  match: {
-    type: String,
+  matchSelects: {
+    type: [String],
   },
-  game: {
-    type: String,
+  gameSelects: {
+    type: [String],
   },
   team1Players: {
     type: [[String]],
@@ -21,8 +21,8 @@ const scoreSchema = new mongoose.Schema({
   team2Players: {
     type: [[String]],
   },
-  winner: {
-    type: String,
+  winnerSelects: {
+    type: [String],
   },
 });
 
