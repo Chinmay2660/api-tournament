@@ -3,8 +3,8 @@ const router = express.Router();
 const Score = require("../models/Score");
 
 router.post("/", async (req, res) => {
-  console.log("Received POST request"); 
-  console.log("Request body:", req.body); 
+  // console.log("Received POST request"); 
+  // console.log("Request body:", req.body); 
   try {
     const score = new Score(req.body);
     await score.save();
