@@ -22,7 +22,7 @@ mongoose.connection.on("connected", () => {
 mongoose.connection.on("error", (err) => {
   console.error("MongoDB connection error:", err);
 });
-app.use("/api/scores", scoresRouter);
+app.use("/", scoresRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
