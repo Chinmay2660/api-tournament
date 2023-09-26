@@ -9,21 +9,25 @@ const scoreSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  matchSelects: {
-    type: [String],
-  },
-  gameSelects: {
-    type: [String],
-  },
-  team1Players: {
-    type: [[String]],
-  },
-  team2Players: {
-    type: [[String]],
-  },
-  winnerSelects: {
-    type: [String],
-  },
+  matches: [
+    {
+      matchSelects: {
+        type: String,
+      },
+      gameSelects: {
+        type: String,
+      },
+      team1Players: {
+        type: [String],
+      },
+      team2Players: {
+        type: [String],
+      },
+      winnerSelects: {
+        type: String,
+      },
+    },
+  ],
 });
 
 module.exports = mongoose.model("Score", scoreSchema, "TournamentDB");
