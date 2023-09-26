@@ -21,3 +21,13 @@ exports.getScores = async (req, res) => {
     res.status(500).json({ error: "Error fetching scores" });
   }
 };
+
+exports.deleteData = async (req, res) => {
+  try {
+    await Score.deleteMany({});
+    res.status(200).json({ message: "Data cleared successfully" });
+  } catch (error) {
+    console.error("Error clearing data:", error);
+    res.status(500).json({ error: "Error clearing data" });
+  }
+};
